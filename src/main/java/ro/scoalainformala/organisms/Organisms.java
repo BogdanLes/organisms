@@ -13,4 +13,13 @@ public abstract class Organisms {
 
     public abstract void move();
 
+    public abstract void setConsume(String cons);
+
+    public abstract void setBrethe(String bhr);
+
+    public abstract void setSize(String sz);
+
+    public abstract void setReproduction(String re);
+
+
 }

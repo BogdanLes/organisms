@@ -2,12 +2,12 @@ package ro.scoalainformala.organisms;
 
 import java.util.Objects;
 
-public class Animals extends Multicellular {
+public class Plants extends Multicellular {
 
-    private String consume = "organic matter";
-    private String breathe = "oxigen";
+    private String consume = "sunlight and nutrients";
+    private String breathe = "carbon dioxide";
 
-    public Animals(String aName) {
+    public Plants(String aName) {
         super(aName);
     }
 
@@ -28,7 +28,7 @@ public class Animals extends Multicellular {
     }
 
     public void move() {
-        System.out.println(getGroupName() + " can move.");
+        System.out.println(getGroupName() + " can not move.");
     }
 
     @Override
@@ -49,8 +49,8 @@ public class Animals extends Multicellular {
         if (obj == null) {
             return false;
         }
-        if (obj instanceof Animals) {
-            Animals other = (Animals) obj;
+        if (obj instanceof Plants) {
+            Plants other = (Plants) obj;
             if (this.getGroupName().toLowerCase().equals(other.getGroupName().toLowerCase())) {
                 return true;
             } else {

@@ -2,33 +2,33 @@ package ro.scoalainformala.organisms;
 
 import java.util.Objects;
 
-public class Animals extends Multicellular {
+public class Archaea extends Unicellular {
 
-    private String consume = "organic matter";
-    private String breathe = "oxigen";
+    private String size = "smaller than 1mm";
+    private String reproduction = "cell division";
 
-    public Animals(String aName) {
+    public Archaea(String aName) {
         super(aName);
     }
 
-    public String getConsume() {
-        return consume;
+    public String getSize() {
+        return size;
     }
 
-    public void setConsume(String sc) {
-        consume = sc;
+    public void setSize(String sc) {
+        size = sc;
     }
 
-    public String getBrethe() {
-        return breathe;
+    public String getReproduction() {
+        return reproduction;
     }
 
-    public void setBrethe(String sb) {
-        breathe = sb;
+    public void setReproduction(String sb) {
+        reproduction = sb;
     }
 
     public void move() {
-        System.out.println(getGroupName() + " can move.");
+        System.out.println(getGroupName() + " can move locally.");
     }
 
     @Override
@@ -36,8 +36,8 @@ public class Animals extends Multicellular {
         return """
                 \nGroup name: """ + getGroupName() + """
                 \nClass:  """ + getOrgClass() + """
-                \nConsumes: """ + consume + """
-                \nBreathes: """ + breathe + """
+                \nSize: """ + size + """
+                \nReproduction: """ + reproduction + """
                 """;
     }
 
@@ -49,8 +49,8 @@ public class Animals extends Multicellular {
         if (obj == null) {
             return false;
         }
-        if (obj instanceof Animals) {
-            Animals other = (Animals) obj;
+        if (obj instanceof Archaea) {
+            Archaea other = (Archaea) obj;
             if (this.getGroupName().toLowerCase().equals(other.getGroupName().toLowerCase())) {
                 return true;
             } else {
@@ -65,10 +65,10 @@ public class Animals extends Multicellular {
         return Objects.hash(getGroupName());
     }
 
-    public void setSize(String sz) {
+    public void setConsume(String cons) {
     }
 
-    public void setReproduction(String re) {
+    public void setBrethe(String bhr) {
     }
 
 }
