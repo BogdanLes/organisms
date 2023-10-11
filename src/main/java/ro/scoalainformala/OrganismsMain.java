@@ -157,6 +157,41 @@ public class OrganismsMain {
 
             } else if ("3".equals(item)) {
                 //update organism
+                String updateOrg;
+                System.out.print("Enter the organism you want to update: ");
+                updateOrg = s.nextLine();
+                boolean vo = false;
+                for (i = 0; i < k; i++) {
+                    if (org[i].getGroupName().equals(updateOrg)) {
+                        if (org[i] instanceof Animals || org[i] instanceof Plants || org[i] instanceof Funghi) {
+                            System.out.println("Organism found:");
+                            System.out.print(org[i].toString() + "\n");
+                            String v = "";
+                            System.out.print("Enter what the organism consumes: ");
+                            v = s.nextLine();
+                            org[i].setConsume(v);
+                            System.out.print("Enter what the organism breathes: ");
+                            v = s.nextLine();
+                            org[i].setBrethe(v);
+                        } else {
+                            System.out.println("Organism found:");
+                            System.out.print(org[i].toString() + "\n");
+                            String v = "";
+                            System.out.print("Enter the size of the organism(default: smaller than 1mm): ");
+                            v = s.nextLine();
+                            org[i].setSize(v);
+                            System.out.print("Enter how the organism breeds(default: cell division): ");
+                            v = s.nextLine();
+                            org[i].setReproduction(v);
+                        }
+                        vo = true;
+                        System.out.println("Organism updated.");
+                        break;
+                    }
+                }
+                if (vo == false) {
+                    System.out.println("Organism not found");
+                }
 
             } else if ("4".equals(item)) {
                 System.out.println("Goodby!");
@@ -167,9 +202,3 @@ public class OrganismsMain {
         } while (!"4".equals(item));
     }
 }
-/*
-1 Add organism
-        2 List organisms
-        3 Update organism
-        4 Exit
-          */
